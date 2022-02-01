@@ -3,10 +3,15 @@
 class Connection {
 
 
-    public static function make()
+    public static function make($config)
     {
         try {
-            return new PDO('mysql:host=127.0.0.1:3308;dbname=mytodo','root','password');
+            return new PDO(
+                "{$config['database']['connection']};dbname={$config['database']['dbname']}",
+                $config['database']['username'],
+                $config['database']['password'],
+                $config['database']['options']
+            );
         } catch (\Throwable $th) {
            die($th->getMessage());
         }

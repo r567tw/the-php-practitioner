@@ -1,7 +1,6 @@
 <?php 
 
 class Task {
-    protected $id;
     protected $title;
     protected $complete;
 
