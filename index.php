@@ -1,9 +1,9 @@
 <?php
 
-require "bootstrap.php";
+require "core/bootstrap.php";
 require "Task.php";
 
-$tasks = $query->selectAll("tasks-not-exist",'Task');
+// require "routes.php";
 
-require "index.view.php";
+require Router::load("routes.php")->direct(Request::uri());
 
