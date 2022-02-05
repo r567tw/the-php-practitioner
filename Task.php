@@ -1,8 +1,8 @@
 <?php 
 
 class Task {
-    protected $title;
-    protected $complete;
+    public $title;
+    public $complete;
 
     function completed(){
         return $this->complete == 1;
