@@ -5,4 +5,5 @@ require "core/database/Connection.php";
 require "core/database/QueryBuilder.php";
 
 $config = require "config.php";
-$query = new QueryBuilder(Connection::make($config));
+$app = array();
+$app['database'] = new QueryBuilder(Connection::make($config));

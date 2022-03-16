@@ -19,4 +19,21 @@ class QueryBuilder
         }
 
     }
+
+    public function insert($table , $params)
+    {
+        $sql = sprintf("insert into %s (%s) values (%s)", 
+            $table, 
+            implode(',', array_keys($params)), 
+            ':'.implode(', :',array_keys($params))
+        );
+
+        try {
+            $stat = $this->pdo->prepare($sql);
+            $stat->execute($params);
+        } catch (\PDOException $e) {
+            die('Somethin went wrong');
+        }
+
+    }
 }

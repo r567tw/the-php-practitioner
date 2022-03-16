@@ -1,6 +1,6 @@
 <?php
 // var_dump($query);
-$tasks = $query->selectAll("tasks",'task');
+$users = $app['database']->selectAll("users");
 
 require "views/index.view.php";
 
