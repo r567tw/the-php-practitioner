@@ -1,4 +1,4 @@
 <?php
 
-$app['database']->insert('users',['name'=> $_REQUEST['name']]);
+App::get('database')->insert('users',['name'=> $_REQUEST['name']]);
 header('Location:/');
