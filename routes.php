@@ -1,17 +1,10 @@
 <?php
 
-// $router->define([
-//     ''      => 'controllers/index.php',
-//     'contact'   => 'controllers/contact.php',
-//     'about' => 'controllers/about.php',
-//     'about/test' => 'controllers/about-test.php',
-//     'name'      => 'controllers/add_name.php'
-// ]);
+$router->get('', 'PageController@index');
+$router->get('a', 'PageController@a'); // not found
 
-
-$router->get('', 'controllers/index.php');
-$router->get('contact', 'controllers/contact.php');
-$router->get('about', 'controllers/about.php');
-$router->get('about/test', 'controllers/about-test.php');
-$router->get('name', 'controllers/add_name.php');
-$router->post('helloworld', 'controllers/add_helloworld.php');
+$router->get('contact', 'PageController@contact');
+$router->get('about', 'PageController@about');
+$router->get('about/test', 'PageController@aboutTest');
+$router->get('name', 'PageController@addName');
+$router->post('helloworld', 'PageController@helloWorld');

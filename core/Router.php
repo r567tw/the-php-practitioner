@@ -21,7 +21,9 @@ class Router
     public function direct($uri,$request_method){
         $routes = $this->routes[$request_method];
         if (array_key_exists($uri, $routes)){
-            return $routes[$uri];
+            return $this->callAction(
+                ...explode("@",$routes[$uri])
+            );
         } else {
             throw new \Exception("404 not found");
         } 
@@ -33,5 +35,14 @@ class Router
 
     public function post($name,$route){
         $this->routes['POST'][$name] = $route;
+    }
+
+    public function callAction($controller ,$action)
+    {
+        $object = new $controller;
+        if (!method_exists($object,$action)){
+            throw new \Exception("{$controller} doesn't have {$action} method");
+        }
+        return $object->$action();
     }
 }
