@@ -7,10 +7,10 @@ class Connection {
     {
         try {
             return new PDO(
-                "{$config['database']['connection']};dbname={$config['database']['dbname']}",
-                $config['database']['username'],
-                $config['database']['password'],
-                $config['database']['options']
+                "{$config['connection']};dbname={$config['dbname']}",
+                $config['username'],
+                $config['password'],
+                $config['options']
             );
         } catch (\Throwable $th) {
            die($th->getMessage());
