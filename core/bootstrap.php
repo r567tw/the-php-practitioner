@@ -11,5 +11,5 @@ App::bind('database', new QueryBuilder(
 function view($name,$data = [])
 {
     extract($data);
-    return require "views/{$name}.php";
+    return require "app/views/{$name}.php";
 }

@@ -12,7 +12,6 @@ class PageController{
 
     public function contact()
     {
-        require "views/contact.php";
         return view("contact");
 
     }

@@ -1,6 +1,6 @@
-<?php include('views/partial/head.php'); ?>
+<?php view('partial/head'); ?>
 
-<?php include('views/partial/nav.php'); ?>
+<?php view('partial/nav'); ?>
 
 <ul>
     <?php foreach ($users as $user) { ?>
@@ -19,5 +19,5 @@
     <input type="text" name="name">
     <button type="submit">送出</button>
 </form>
-<?php include('views/partial/footer.php'); ?>
+<?php view('partial/footer'); ?>
 
