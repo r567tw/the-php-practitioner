@@ -1,16 +1,7 @@
 {
-    "name": "fang/focus-framework",
-    "description": "the mini php framework by api",
     "autoload": {
         "classmap" : [
             "./"
         ]
-    },
-    "authors": [
-        {
-            "name": "r567tw",
-            "email": "r567tw@gmail.com"
-        }
-    ],
-    "require": {}
+    }
 }
