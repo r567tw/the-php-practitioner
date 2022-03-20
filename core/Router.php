@@ -1,4 +1,5 @@
 <?php
+namespace App\Core;
 
 class Router 
 {
@@ -39,7 +40,8 @@ class Router
 
     public function callAction($controller ,$action)
     {
-        $object = new $controller;
+        $class = "App\\Controllers\\{$controller}";
+        $object =  new $class;
         if (!method_exists($object,$action)){
             throw new \Exception("{$controller} doesn't have {$action} method");
         }

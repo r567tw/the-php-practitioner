@@ -1,10 +1,11 @@
 <?php
+namespace App\Core\Database;
 
 class QueryBuilder 
 {
     protected $pdo;
 
-    public function __construct(PDO $pdo)
+    public function __construct(\PDO $pdo)
     {
         $this->pdo = $pdo;
     }
@@ -13,9 +14,9 @@ class QueryBuilder
         $stat = $this->pdo->prepare("select * from {$table}");
         $stat->execute();
         if ($intoClass){
-            return $stat->fetchAll(PDO::FETCH_CLASS,$intoClass);
+            return $stat->fetchAll(\PDO::FETCH_CLASS,$intoClass);
         } else {
-            return $stat->fetchAll(PDO::FETCH_CLASS);
+            return $stat->fetchAll(\PDO::FETCH_CLASS);
         }
 
     }
